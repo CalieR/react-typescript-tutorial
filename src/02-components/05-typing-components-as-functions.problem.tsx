@@ -4,8 +4,10 @@ interface Props {
   className: string;
 }
 
+// This approach is actually deprecated
+
 /* @ts-expect-error */
-export const Button = (props: Props) => {
+export const Button: React.FunctionComponent<Props> = (props) => {
   return {
     ohDear: "123",
   };
