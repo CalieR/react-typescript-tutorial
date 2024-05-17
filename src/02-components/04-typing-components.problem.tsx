@@ -1,6 +1,13 @@
 import React from "react";
 
-export const Button = (props: unknown) => {
+// Initially I just declared className :string directly
+// Refactored to this approach as I like abstraction and it's more readable:
+
+export interface ButtonProps {
+  className: string;
+}
+
+export const Button = (props: ButtonProps) => {
   return <button className={props.className}></button>;
 };
 
