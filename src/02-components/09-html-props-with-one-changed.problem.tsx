@@ -1,9 +1,19 @@
 import { ComponentProps } from "react";
 import { Equal, Expect } from "../helpers/type-utils";
 
-export const Input = (
-  props: ComponentProps<"input"> & { onChange: (value: string) => void }
-) => {
+//  use a type:
+
+// type newProps = Omit<ComponentProps<"input">, "onChange"> & {
+//   onChange: (value: string) => void;
+// };
+
+// or an interface - slightly different syntax:
+
+interface newProps extends Omit<ComponentProps<"input">, "onChange"> {
+  onChange: (value: string) => void;
+}
+
+export const Input = (props: newProps) => {
   return (
     <input
       {...props}

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-export const Button = ({ className, ...rest }: {}) => {
+// more elegant - replace with any element you want to expose all native types to ...rest:
+// export const Button = ({ className, ...rest }: ComponentProps<"button">) => {
+
+export const Button = ({ className, ...rest }: ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button {...rest} className={`default-classname ${className}`}></button>
   );
